@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <title>Singlish → සිංහල | Affluent Information Sri Lanka Ltd.</title>
+  <meta name="author" content="W.S. Botejue | Affluent Information Sri Lanka Ltd." />
+  <meta name="description" content="Singlish වලින් type කර සැණෙකින් නිවැරදි සිංහල අකුරු ලබාගන්න. Powered by W.S. Botejue | Affluent Information Sri Lanka Ltd." />
+
+  <!-- Open Graph Meta Tags for Attractive Facebook Link Previews -->
+  <meta property="og:title" content="Singlish → සිංහල | පහසුවෙන් සිංහල Type කරන්න" />
+  <meta property="og:description" content="Singlish වලින් type කර සැණෙකින් නිවැරදි සිංහල අකුරු ලබාගන්න. Powered by W.S. Botejue | Affluent Information Sri Lanka Ltd." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Affluent Information Sri Lanka Ltd." />
+  <meta property="og:locale" content="si_LK" />
+
+  <!-- Google Font: Noto Sans Sinhala (with fast display swap & system fallbacks) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* =====================================================================
+       1. DESIGN TOKENS & THEME VARIABLES (ZERO EXTERNAL CSS DEPENDENCIES)
+       ===================================================================== */
+    :root {
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --border: #e2e8f0;
+      --border-strong: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-soft: #eef2ff;
+      --success: #059669;
+      --success-hover: #047857;
+      --success-soft: #ecfdf5;
+      --fb-blue: #1877f2;
+      --fb-blue-hover: #166fe5;
+      --wa-green: #25d366;
+      --wa-green-hover: #1ebe5d;
+      --danger: #e11d48;
+      --danger-soft: #fff1f2;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.12);
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --font-ui: "Noto Sans Sinhala", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    html.dark {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-soft: #1e293b;
+      --border: #1f2937;
+      --border-strong: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #6366f1;
+      --primary-hover: #818cf8;
+      --primary-soft: rgba(99, 102, 241, 0.16);
+      --success: #10b981;
+      --success-hover: #059669;
+      --success-soft: rgba(16, 185, 129, 0.16);
+      --danger: #fb7185;
+      --danger-soft: rgba(244, 63, 94, 0.15);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.55);
+    }
+
+    /* =====================================================================
+       2. BASE & RESET
+       ===================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-ui);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: inherit;
+    }
+
+    button:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* =====================================================================
+       3. COMPACT STICKY HEADER (MAXIMIZES SPACE FOR MOBILE KEYBOARD)
+       ===================================================================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 12px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-width: 0;
+    }
+
+    .brand-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #4f46e5, #10b981);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0;
+    }
+
+    .brand-title span {
+      color: var(--primary);
+    }
+
+    .brand-subtitle {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      letter-spacing: 0.01em;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .icon-btn {
+      min-width: 38px;
+      height: 38px;
+      padding: 0 10px;
+      border-radius: 10px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    .icon-btn:active {
+      transform: scale(0.96);
+    }
+
+    .icon-btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .hide-xs {
+      display: none;
+    }
+
+    /* =====================================================================
+       4. MAIN WORKSPACE (MOBILE-FIRST STACKED, DESKTOP SIDE-BY-SIDE)
+       ===================================================================== */
+    .main {
+      flex: 1;
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 10px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Mobile-first order: Sinhala Output on TOP so it stays visible above keyboard */
+    .editor-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pane {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: border-color 0.15s ease;
+    }
+
+    .pane:focus-within {
+      border-color: var(--primary);
+    }
+
+    .pane-output {
+      order: 1;
+    }
+
+    .pane-input {
+      order: 2;
+    }
+
+    .pane-header {
+      padding: 8px 12px;
+      background: var(--surface-soft);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .pane-label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-green { background: var(--success); }
+    .dot-indigo { background: var(--primary); }
+
+    .pane-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .counter {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    /* Font size pill switcher */
+    .size-group {
+      display: inline-flex;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .size-btn {
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+
+    .size-btn.active {
+      background: var(--surface);
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Textareas */
+    .editor-textarea {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-family: var(--font-ui);
+      padding: 12px;
+      resize: vertical;
+      outline: none;
+    }
+
+    .editor-textarea::placeholder {
+      color: var(--text-muted);
+      opacity: 0.8;
+    }
+
+    #sinhala-output {
+      min-height: 125px;
+      line-height: 1.75;
+    }
+
+    #singlish-input {
+      min-height: 115px;
+      font-size: 16px; /* Prevents iOS auto-zoom on focus */
+      line-height: 1.6;
+    }
+
+    .font-sm { font-size: 15px; }
+    .font-md { font-size: 18px; }
+    .font-lg { font-size: 22px; }
+
+    .pane-hint {
+      padding: 6px 12px;
+      border-top: 1px solid var(--border);
+      background: var(--surface-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .code-chip {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: var(--primary-soft);
+      color: var(--primary);
+      padding: 1px 5px;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    /* =====================================================================
+       5. QUICK ACTION BAR (TOUCH-FRIENDLY BUTTONS)
+       ===================================================================== */
+    .actions-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 10px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .actions-primary-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+
+    .actions-share-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .btn {
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      text-decoration: none;
+      transition: transform 0.1s ease, filter 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .btn-copy {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(79, 70, 229, 0.28);
+    }
+
+    .btn-copy:hover { background: var(--primary-hover); }
+
+    .btn-clear {
+      background: var(--danger-soft);
+      color: var(--danger);
+      padding: 0 16px;
+    }
+
+    .btn-whatsapp {
+      background: var(--wa-green);
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    .btn-whatsapp:hover { background: var(--wa-green-hover); }
+
+    .btn-facebook {
+      background: var(--fb-blue);
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    .btn-facebook:hover { background: var(--fb-blue-hover); }
+
+    /* =====================================================================
+       6. QUICK TRY SAMPLES STRIP
+       ===================================================================== */
+    .samples-strip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+
+    .samples-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .sample-pill {
+      flex-shrink: 0;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .sample-pill:hover, .sample-pill:active {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* =====================================================================
+       7. INTERACTIVE TYPING GUIDE MODAL / BOTTOM DRAWER
+       ===================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(3px);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-sheet {
+      width: 100%;
+      max-width: 720px;
+      max-height: 84dvh;
+      background: var(--surface);
+      border-radius: 20px 20px 0 0;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: slideUp 0.2s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(28px); opacity: 0.7; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-header {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .modal-title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .modal-body {
+      padding: 14px 16px 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .quick-examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .example-chip {
+      padding: 6px 10px;
+      border-radius: 10px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .guide-tabs {
+      display: flex;
+      gap: 6px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .guide-tab {
+      padding: 7px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      background: var(--surface-soft);
+      color: var(--text-muted);
+    }
+
+    .guide-tab.active {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(74px, 1fr));
+      gap: 8px;
+    }
+
+    .char-chip {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 8px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      transition: border-color 0.12s ease, transform 0.1s ease;
+    }
+
+    .char-chip:active {
+      transform: scale(0.95);
+      border-color: var(--primary);
+    }
+
+    .char-si {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .char-en {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .char-alt {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* =====================================================================
+       8. TOAST NOTIFICATION
+       ===================================================================== */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translate(-50%, 16px);
+      z-index: 60;
+      max-width: calc(100% - 24px);
+      background: var(--success);
+      color: #ffffff;
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .toast.toast-neutral {
+      background: #1e293b;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 14px 12px 20px;
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .footer-powered {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .footer-powered strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .footer-company {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* =====================================================================
+       9. RESPONSIVE BREAKPOINTS (TABLET & DESKTOP)
+       ===================================================================== */
+    @media (min-width: 520px) {
+      .hide-xs {
+        display: inline;
+      }
+      .main {
+        padding: 16px;
+        gap: 14px;
+      }
+    }
+
+    @media (min-width: 860px) {
+      .header {
+        padding: 0 24px;
+        height: 58px;
+      }
+      .editor-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      /* On desktop: Singlish Input on Left, Sinhala Output on Right */
+      .pane-input { order: 1; }
+      .pane-output { order: 2; }
+
+      #singlish-input, #sinhala-output {
+        min-height: 280px;
+      }
+      .actions-card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 14px;
+      }
+      .actions-primary-row, .actions-share-row {
+        display: flex;
+        align-items: center;
+      }
+      .modal-backdrop {
+        align-items: center;
+        padding: 20px;
+      }
+      .modal-sheet {
+        border-radius: 20px;
+        max-height: 80vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ==================== COMPACT HEADER ==================== -->
+  <header class="header">
+    <div class="brand">
+      <div class="brand-badge" aria-hidden="true">අ</div>
+      <div class="brand-text">
+        <h1 class="brand-title">Singlish <span>→</span> සිංහල</h1>
+        <span class="brand-subtitle">Affluent Information Sri Lanka Ltd.</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Typing Guide Drawer Button -->
+      <button id="btn-open-guide" type="button" class="icon-btn" aria-label="Open Typing Guide">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+        <span>උදව්</span>
+      </button>
+
+      <!-- Dark / Light Mode Toggle -->
+      <button id="btn-theme" type="button" class="icon-btn" aria-label="Toggle Dark Mode">
+        <svg id="icon-sun" style="display:none; color:#f59e0b;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg id="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN WORKSPACE ==================== -->
+  <main class="main">
+
+    <!-- Quick Sample Pills -->
+    <div class="samples-strip" aria-label="Quick try samples">
+      <button type="button" class="sample-pill" data-sample="aayuboawan! kohomadha?">ආයුබෝවන්!</button>
+      <button type="button" class="sample-pill" data-sample="shri langkaawa sundhara ratak.">ශ්‍රී ලංකාව</button>
+      <button type="button" class="sample-pill" data-sample="suba udhaesanak yaaluwane!">සුබ උදෑසනක්</button>
+      <button type="button" class="sample-pill" data-sample="mama [Facebook] ekata meaka daanavaa.">[English] Mix</button>
+    </div>
+
+    <!-- Split / Stacked Editor -->
+    <section class="editor-grid">
+
+      <!-- SINHALA OUTPUT PANE (Top on mobile so it stays visible above keyboard) -->
+      <div class="pane pane-output">
+        <div class="pane-header">
+          <label for="sinhala-output" class="pane-label">
+            <span class="dot dot-green"></span>
+            සිංහල අකුරු (Output)
+          </label>
+          <div class="pane-meta">
+            <span id="output-counter" class="counter">0 වචන · 0 අකුරු</span>
+            <div class="size-group" role="group" aria-label="Font size">
+              <button type="button" class="size-btn" data-size="font-sm">S</button>
+              <button type="button" class="size-btn active" data-size="font-md">M</button>
+              <button type="button" class="size-btn" data-size="font-lg">L</button>
+            </div>
+          </div>
+        </div>
+
+        <textarea
+          id="sinhala-output"
+          class="editor-textarea font-md"
+          placeholder="සිංහල අකුරු මෙහි දිස්වේ..."
+          aria-label="Sinhala Unicode Output"
+        ></textarea>
+      </div>
+
+      <!-- SINGLISH INPUT PANE -->
+      <div class="pane pane-input">
+        <div class="pane-header">
+          <label for="singlish-input" class="pane-label">
+            <span class="dot dot-indigo"></span>
+            Singlish Type කරන්න
+          </label>
+          <div class="pane-meta">
+            <span id="input-counter" class="counter">0 words · 0 chars</span>
+          </div>
+        </div>
+
+        <textarea
+          id="singlish-input"
+          class="editor-textarea"
+          spellcheck="false"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder="Mehe Singlish walin type karanna... (Udaharana: aayubowan, sri lanka)&#10;ඉංග්‍රීසි වචන සඳහා [English] ලෙස යොදන්න."
+          aria-label="Singlish Input"
+        ></textarea>
+
+        <div class="pane-hint">
+          <span>English තබාගැනීමට: <span class="code-chip">[Word]</span></span>
+          <span>Auto-saved ✓</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- QUICK ACTION BUTTONS -->
+    <section class="actions-card" aria-label="Actions">
+      <div class="actions-primary-row">
+        <button id="btn-copy" type="button" class="btn btn-copy">
+          <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          <span>Copy සිංහල</span>
+        </button>
+
+        <button id="btn-clear" type="button" class="btn btn-clear" aria-label="Clear text">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
+          <span class="hide-xs">Clear</span>
+        </button>
+      </div>
+
+      <div class="actions-share-row">
+        <button id="btn-whatsapp" type="button" class="btn btn-whatsapp">
+          <svg fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.031 2C6.504 2 2 6.486 2 12c0 1.825.489 3.599 1.416 5.146L2.04 22l4.985-1.307A10.01 10.01 0 0012.03 22C17.557 22 22 17.514 22 12S17.557 2 12.031 2zm5.844 14.122c-.246.693-1.434 1.326-1.988 1.409-.513.076-1.178.109-1.901-.12-.441-.14-1.008-.327-1.737-.64-3.058-1.318-5.056-4.405-5.209-4.609-.152-.204-1.242-1.653-1.242-3.153 0-1.5.786-2.237 1.066-2.543.28-.306.61-.383.813-.383.203 0 .406.002.584.011.188.009.44-.071.688.526.254.611.864 2.111.94 2.264.076.153.127.331.025.535-.102.204-.153.331-.305.51-.153.178-.322.398-.458.535-.153.152-.312.318-.134.624.178.306.791 1.304 1.698 2.113 1.167 1.04 2.15 1.363 2.455 1.516.305.153.483.127.661-.076.178-.204.762-.891.966-1.197.203-.306.406-.255.686-.153.28.102 1.78.84 2.085.993.305.153.508.229.584.357.076.127.076.739-.17 1.432z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </button>
+
+        <button id="btn-fb-share" type="button" class="btn btn-facebook">
+          <svg fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12.06C22 6.504 17.523 2 12 2S2 6.504 2 12.06C2 17.082 5.657 21.244 10.438 22v-7.03H7.898v-2.91h2.54V9.845c0-2.522 1.492-3.915 3.777-3.915 1.094 0 2.238.197 2.238.197v2.476h-1.26c-1.243 0-1.63.775-1.63 1.57v1.887h2.773l-.443 2.91h-2.33V22C18.343 21.244 22 17.082 22 12.06z"/>
+          </svg>
+          <span>FB Share</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-powered">Powered by <strong>W.S. Botejue</strong></div>
+    <div class="footer-company">&copy; 2026 Affluent Information Sri Lanka Ltd. · All Rights Reserved</div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE TYPING GUIDE MODAL ==================== -->
+  <div id="guide-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="guide-title">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <h2 id="guide-title" class="modal-title">Singlish Typing Guide (Click කරන්න)</h2>
+        <button id="btn-close-guide" type="button" class="icon-btn" aria-label="Close Guide">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Clickable Quick Examples -->
+        <div>
+          <div style="font-size:12px; font-weight:700; color:var(--text-muted); margin-bottom:6px;">
+            ඉක්මන් උදාහරණ (Tap to insert):
+          </div>
+          <div class="quick-examples">
+            <button type="button" class="example-chip" data-insert="aayubowan ">aayubowan → ආයුබොවන්</button>
+            <button type="button" class="example-chip" data-insert="sri lanka ">sri lanka → ශ්‍රී ලන්ක</button>
+            <button type="button" class="example-chip" data-insert="nnda ">nnd → ඳ</button>
+            <button type="button" class="example-chip" data-insert="nnga ">nng → ඟ</button>
+            <button type="button" class="example-chip" data-insert="[English] ">[English] → English</button>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="guide-tabs" role="tablist">
+          <button type="button" class="guide-tab active" data-tab="vowels">ස්වර</button>
+          <button type="button" class="guide-tab" data-tab="consonants">ව්‍යංජන</button>
+          <button type="button" class="guide-tab" data-tab="special">විශේෂ</button>
+        </div>
+
+        <!-- Dynamic Character Chips -->
+        <div id="guide-grid" class="guide-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span id="toast-text">සිංහල අකුරු Copy වුණා!</span>
+  </div>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    /**
+     * =========================================================================
+     * 1. UCSC-STANDARD SINGLISH TO SINHALA UNICODE CONVERTER ENGINE
+     * =========================================================================
+     * Supports:
+     *  - All Sinhala vowels (a, aa, A, ae, Aae, i, ii, I, u, uu, U, e, ee, o, oo, au...)
+     *  - All consonants: standard, aspirated (kh, gh, ch, jh, th, dh, ph, bh, sh, Sh),
+     *    retroflex (t, T, d, D, n, N, l, L), and Sanyaka (nng, nnd, nndh, nd, mb)
+     *  - Automatic Hal Kirima (\u0DCA) on trailing consonants or before consonants
+     *  - Rakaranshaya (\u0DCA\u200D\u0DBB), Yanshaya (\u0DCA\u200D\u0DBA), Repaya (R -> \u0DBB\u0DCA\u200D)
+     *  - Special words: shri / Shri / sri / Sri -> ශ්‍රී, ru -> රු, ruu -> රූ
+     *  - [English text] bracket bypass & \ backslash escape
+     */
+    const SinglishEngine = (() => {
+      const HAL = '\u0DCA';                   // ්
+      const RAKARANSHAYA = '\u0DCA\u200D\u0DBB'; // ්‍ර
+      const YANSHAYA = '\u0DCA\u200D\u0DBA';     // ්‍ය
+      const REPAYA = '\u0DBB\u0DCA\u200D';       // ර්‍ (Repaya before consonant)
+
+      // Special fixed sequences
+      const SPECIALS = [
+        ['shri', 'ශ්‍රී'],
+        ['Shri', 'ශ්‍රී'],
+        ['Sri', 'ශ්‍රී'],
+        ['sri', 'ශ්‍රී'],
+        ['ng', 'ං'],
+        ['H', 'ඃ'],
+      ].sort((a, b) => b[0].length - a[0].length);
+
+      // Consonants (longest match first)
+      const CONSONANTS = [
+        // 4-char & 3-char Sanyaka / Conjuncts
+        ['nndh', 'ඬ'],
+        ['nng', 'ඟ'],
+        ['nnd', 'ඳ'],
+        ['mmb', 'ඹ'],
+        ['ndh', 'ඳ'],
+        ['chh', 'ඡ'],
+        ['ksh', 'ක්‍ෂ'],
+
+        // 2-char Aspirated / Dental / Sanyaka
+        ['kh', 'ඛ'],
+        ['gh', 'ඝ'],
+        ['ch', 'ච'],
+        ['Ch', 'ඡ'],
+        ['jh', 'ඣ'],
+        ['kn', 'ඤ'],
+        ['gn', 'ඤ'],
+        ['th', 'ත'],
+        ['Th', 'ථ'],
+        ['dh', 'ද'],
+        ['Dh', 'ධ'],
+        ['nd', 'ඳ'],
+        ['ph', 'ඵ'],
+        ['bh', 'භ'],
+        ['mb', 'ඹ'],
+        ['sh', 'ශ'],
+        ['Sh', 'ෂ'],
+
+        // 1-char Consonants
+        ['k', 'ක'], ['K', 'ඛ'],
+        ['g', 'ග'], ['G', 'ඝ'],
+        ['c', 'ච'], ['C', 'ඡ'],
+        ['j', 'ජ'], ['J', 'ඣ'],
+        ['t', 'ට'], ['T', 'ඨ'],
+        ['d', 'ඩ'], ['D', 'ඪ'],
+        ['N', 'ණ'], ['n', 'න'],
+        ['p', 'ප'], ['P', 'ඵ'],
+        ['b', 'බ'], ['B', 'භ'],
+        ['m', 'ම'], ['M', 'ම'],
+        ['y', 'ය'], ['Y', 'ය'],
+        ['r', 'ර'],
+        ['l', 'ල'], ['L', 'ළ'],
+        ['v', 'ව'], ['V', 'ව'],
+        ['w', 'ව'], ['W', 'ව'],
+        ['s', 'ස'], ['S', 'ස'],
+        ['h', 'හ'],
+        ['f', 'ෆ'], ['F', 'ෆ'],
+        ['x', 'ක්‍ෂ'], ['X', 'ක්‍ෂ'],
+      ].sort((a, b) => b[0].length - a[0].length);
+
+      // Independent Vowels (when not following a consonant)
+      const STANDALONE_VOWELS = [
+        ['Aae', 'ඈ'], ['aae', 'ඈ'], ['Aa', 'ඈ'],
+        ['Ruu', 'ඎ'],
+        ['aa', 'ආ'],
+        ['ae', 'ඇ'],
+        ['ii', 'ඊ'],
+        ['uu', 'ඌ'],
+        ['ee', 'ඒ'], ['ea', 'ඒ'],
+        ['oo', 'ඕ'], ['oa', 'ඕ'],
+        ['ai', 'ඓ'],
+        ['au', 'ඖ'],
+        ['Ru', 'ඍ'],
+        ['a', 'අ'],
+        ['A', 'ඇ'],
+        ['i', 'ඉ'], ['I', 'ඊ'],
+        ['u', 'උ'], ['U', 'ඌ'],
+        ['e', 'එ'], ['E', 'ඒ'],
+        ['o', 'ඔ'], ['O', 'ඕ'],
+      ].sort((a, b) => b[0].length - a[0].length);
+
+      // Dependent Vowel Modifiers (Pillam) after a consonant
+      const VOWEL_MODIFIERS = [
+        ['Aae', 'ෑ'], ['aae', 'ෑ'], ['Aa', 'ෑ'],
+        ['Ruu', 'ෲ'],
+        ['aa', 'ා'],
+        ['ae', 'ැ'],
+        ['ii', 'ී'],
+        ['uu', 'ූ'],
+        ['ee', 'ේ'], ['ea', 'ේ'],
+        ['oo', 'ෝ'], ['oa', 'ෝ'],
+        ['ai', 'ෛ'],
+        ['au', 'ෞ'],
+        ['Ru', 'ෘ'],
+        ['a', ''],
+        ['A', 'ැ'],
+        ['i', 'ි'], ['I', 'ී'],
+        ['u', 'ු'], ['U', 'ූ'],
+        ['e', 'ෙ'], ['E', 'ේ'],
+        ['o', 'ො'], ['O', 'ෝ'],
+      ].sort((a, b) => b[0].length - a[0].length);
+
+      function matchTable(str, pos, table) {
+        for (let i = 0; i < table.length; i++) {
+          const key = table[i][0];
+          if (str.startsWith(key, pos)) {
+            return { key, value: table[i][1], length: key.length };
+          }
+        }
+        return null;
+      }
+
+      function convert(input) {
+        if (!input) return '';
+        let out = '';
+        let i = 0;
+        const len = input.length;
+
+        while (i < len) {
+          const ch = input[i];
+
+          // 1. [English text] bypass
+          if (ch === '[') {
+            const closeIdx = input.indexOf(']', i + 1);
+            if (closeIdx !== -1) {
+              out += input.slice(i + 1, closeIdx);
+              i = closeIdx + 1;
+              continue;
+            } else {
+              out += input.slice(i + 1);
+              break;
+            }
+          }
+
+          // 2. Backslash escape
+          if (ch === '\\') {
+            if (i + 1 < len) {
+              out += input[i + 1];
+              i += 2;
+            } else {
+              i += 1;
+            }
+            continue;
+          }
+
+          // 3. Repaya: 'R' followed by a consonant (e.g. kaRma -> කර්‍ම)
+          if (ch === 'R' && i + 1 < len && input[i + 1] !== 'u' && input[i + 1] !== 'U') {
+            const nextCons = matchTable(input, i + 1, CONSONANTS);
+            if (nextCons) {
+              out += REPAYA;
+              i += 1;
+              continue;
+            }
+          }
+
+          // 4. Special fixed tokens (shri, sri, ng, H)
+          // Ensure 'nng' is parsed as consonant ඟ, not 'n' + 'ng'
+          if (!input.startsWith('nng', i)) {
+            const special = matchTable(input, i, SPECIALS);
+            if (special) {
+              out += special.value;
+              i += special.length;
+              continue;
+            }
+          }
+
+          // 5. Consonants (+ optional Rakaranshaya / Yanshaya + Vowel Modifier)
+          const cons = matchTable(input, i, CONSONANTS);
+          if (cons) {
+            let cluster = cons.value;
+            i += cons.length;
+
+            // Rakaranshaya: consonant + 'r' + vowel (e.g. kra -> ක්‍ර, pra -> ප්‍ර)
+            if (cons.key !== 'r' && i < len && input[i] === 'r') {
+              const vAfterR = matchTable(input, i + 1, VOWEL_MODIFIERS);
+              if (vAfterR) {
+                cluster += RAKARANSHAYA + vAfterR.value;
+                i += 1 + vAfterR.length;
+                out += cluster;
+                continue;
+              }
+            }
+
+            // Yanshaya: consonant + 'y' + vowel (e.g. kya -> ක්‍ය, dya -> ඩ්‍ය, sya -> ස්‍ය)
+            if (cons.key !== 'y' && cons.key !== 'Y' && i < len && input[i] === 'y') {
+              const vAfterY = matchTable(input, i + 1, VOWEL_MODIFIERS);
+              if (vAfterY) {
+                cluster += YANSHAYA + vAfterY.value;
+                i += 1 + vAfterY.length;
+                out += cluster;
+                continue;
+              }
+            }
+
+            // Vowel modifier (pillam)
+            const mod = matchTable(input, i, VOWEL_MODIFIERS);
+            if (mod) {
+              cluster += mod.value;
+              i += mod.length;
+            } else {
+              // No vowel after consonant -> automatic Hal Kirima (්)
+              cluster += HAL;
+            }
+
+            out += cluster;
+            continue;
+          }
+
+          // 6. Standalone Vowels
+          const vowel = matchTable(input, i, STANDALONE_VOWELS);
+          if (vowel) {
+            out += vowel.value;
+            i += vowel.length;
+            continue;
+          }
+
+          // 7. Fallback: spaces, numbers, punctuation, newlines, emojis
+          out += ch;
+          i += 1;
+        }
+
+        return out;
+      }
+
+      return { convert };
+    })();
+
+    /**
+     * =========================================================================
+     * 2. TYPING GUIDE DATA
+     * =========================================================================
+     */
+    const GUIDE_TABS = {
+      vowels: [
+        { code: 'a', si: 'අ' },
+        { code: 'aa', si: 'ආ' },
+        { code: 'ae', si: 'ඇ', alt: 'A' },
+        { code: 'aae', si: 'ඈ', alt: 'Aae' },
+        { code: 'i', si: 'ඉ' },
+        { code: 'ii', si: 'ඊ', alt: 'I' },
+        { code: 'u', si: 'උ' },
+        { code: 'uu', si: 'ඌ', alt: 'U' },
+        { code: 'e', si: 'එ' },
+        { code: 'ee', si: 'ඒ', alt: 'ea' },
+        { code: 'ai', si: 'ඓ' },
+        { code: 'o', si: 'ඔ' },
+        { code: 'oo', si: 'ඕ', alt: 'oa' },
+        { code: 'au', si: 'ඖ' },
+        { code: 'Ru', si: 'ඍ' },
+        { code: 'Ruu', si: 'ඎ' },
+      ],
+      consonants: [
+        { code: 'ka', si: 'ක' }, { code: 'kha', si: 'ඛ' },
+        { code: 'ga', si: 'ග' }, { code: 'gha', si: 'ඝ' },
+        { code: 'cha', si: 'ච' }, { code: 'chha', si: 'ඡ' },
+        { code: 'ja', si: 'ජ' }, { code: 'jha', si: 'ඣ' },
+        { code: 'ta', si: 'ට' }, { code: 'Ta', si: 'ඨ' },
+        { code: 'da', si: 'ඩ' }, { code: 'Da', si: 'ඪ' },
+        { code: 'Na', si: 'ණ' }, { code: 'na', si: 'න' },
+        { code: 'tha', si: 'ත' }, { code: 'Tha', si: 'ථ' },
+        { code: 'dha', si: 'ද' }, { code: 'Dha', si: 'ධ' },
+        { code: 'pa', si: 'ප' }, { code: 'pha', si: 'ඵ' },
+        { code: 'ba', si: 'බ' }, { code: 'bha', si: 'භ' },
+        { code: 'ma', si: 'ම' }, { code: 'ya', si: 'ය' },
+        { code: 'ra', si: 'ර' }, { code: 'la', si: 'ල' },
+        { code: 'La', si: 'ළ' }, { code: 'wa', si: 'ව', alt: 'v' },
+        { code: 'sha', si: 'ශ' }, { code: 'Sha', si: 'ෂ' },
+        { code: 'sa', si: 'ස' }, { code: 'ha', si: 'හ' },
+        { code: 'fa', si: 'ෆ' },
+      ],
+      special: [
+        { code: 'shri', si: 'ශ්‍රී', alt: 'sri' },
+        { code: 'kra', si: 'ක්‍ර', alt: 'රකාරාංශය' },
+        { code: 'pra', si: 'ප්‍ර' },
+        { code: 'kya', si: 'ක්‍ය', alt: 'යංශය' },
+        { code: 'sya', si: 'ස්‍ය' },
+        { code: 'nnga', si: 'ඟ', alt: 'සඤ්ඤක' },
+        { code: 'nnda', si: 'ඳ', alt: 'nd' },
+        { code: 'nndha', si: 'ඬ' },
+        { code: 'mba', si: 'ඹ', alt: 'mmb' },
+        { code: 'kaRma', si: 'කර්‍ම', alt: 'රේපය' },
+        { code: 'ru', si: 'රු' },
+        { code: 'ruu', si: 'රූ' },
+        { code: 'ng', si: 'ං', alt: 'අනුස්වාරය' },
+        { code: 'H', si: 'ඃ', alt: 'විසර්ගය' },
+        { code: 'gna', si: 'ඤ', alt: 'kn' },
+        { code: '[Hello]', si: 'Hello', alt: 'English' },
+      ],
+    };
+
+    /**
+     * =========================================================================
+     * 3. APP CONTROLLER (FACEBOOK IN-APP BROWSER & MOBILE-FIRST OPTIMIZED)
+     * =========================================================================
+     */
+    (function init() {
+      const KEY_TEXT = 'fb_singlish_text_v1';
+      const KEY_THEME = 'fb_singlish_theme_v1';
+      const KEY_SIZE = 'fb_singlish_size_v1';
+
+      const inputEl = document.getElementById('singlish-input');
+      const outputEl = document.getElementById('sinhala-output');
+      const inputCounter = document.getElementById('input-counter');
+      const outputCounter = document.getElementById('output-counter');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const btnWhatsapp = document.getElementById('btn-whatsapp');
+      const btnFbShare = document.getElementById('btn-fb-share');
+      const btnTheme = document.getElementById('btn-theme');
+      const iconSun = document.getElementById('icon-sun');
+      const iconMoon = document.getElementById('icon-moon');
+      const sizeBtns = document.querySelectorAll('.size-btn');
+      const samplePills = document.querySelectorAll('.sample-pill');
+      const guideModal = document.getElementById('guide-modal');
+      const btnOpenGuide = document.getElementById('btn-open-guide');
+      const btnCloseGuide = document.getElementById('btn-close-guide');
+      const guideTabs = document.querySelectorAll('.guide-tab');
+      const guideGrid = document.getElementById('guide-grid');
+      const exampleChips = document.querySelectorAll('.example-chip');
+      const toastEl = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+
+      let toastTimer = null;
+
+      // Safe localStorage helpers (never crash in restricted WebViews)
+      function safeGet(key) {
+        try { return localStorage.getItem(key); } catch (_) { return null; }
+      }
+      function safeSet(key, val) {
+        try { localStorage.setItem(key, val); } catch (_) {}
+      }
+
+      // Toast notification
+      function showToast(msg, isNeutral = false) {
+        toastText.textContent = msg;
+        toastEl.classList.toggle('toast-neutral', isNeutral);
+        toastEl.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2600);
+      }
+
+      // Word & Character count updater
+      function updateCounters(raw, si) {
+        const rawWords = raw.trim() ? raw.trim().split(/\s+/).length : 0;
+        const siWords = si.trim() ? si.trim().split(/\s+/).length : 0;
+        inputCounter.textContent = `${rawWords} words · ${raw.length} chars`;
+        outputCounter.textContent = `${siWords} වචන · ${si.length} අකුරු`;
+      }
+
+      // Real-time conversion
+      function syncText() {
+        const raw = inputEl.value;
+        const converted = SinglishEngine.convert(raw);
+        outputEl.value = converted;
+        updateCounters(raw, converted);
+        safeSet(KEY_TEXT, raw);
+      }
+
+      inputEl.addEventListener('input', syncText);
+      outputEl.addEventListener('input', () => {
+        updateCounters(inputEl.value, outputEl.value);
+      });
+
+      // ---------- Bulletproof Copy for Facebook In-App Browser ----------
+      function fallbackCopy(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '0';
+        ta.style.left = '-9999px';
+        ta.style.fontSize = '16px';
+        document.body.appendChild(ta);
+
+        ta.focus();
+        ta.select();
+        // Required for iOS Safari / Facebook iOS WebView
+        try { ta.setSelectionRange(0, text.length); } catch (_) {}
+
+        let ok = false;
+        try {
+          ok = document.execCommand('copy');
+        } catch (_) {
+          ok = false;
+        }
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      async function copySinhalaText() {
+        const text = outputEl.value;
+        if (!text.trim()) {
+          showToast('පළමුව යමක් Type කරන්න!', true);
+          inputEl.focus();
+          return;
+        }
+
+        const successMsg = 'සිංහල අකුරු Copy වුණා! දැන් FB/WhatsApp වල Paste කරන්න';
+
+        // Try modern Clipboard API first, fall back immediately on any WebView restriction
+        if (navigator.clipboard && window.isSecureContext) {
+          try {
+            await navigator.clipboard.writeText(text);
+            showToast(successMsg);
+            return;
+          } catch (_) {
+            // Fall through to execCommand fallback
+          }
+        }
+
+        if (fallbackCopy(text)) {
+          showToast(successMsg);
+        } else {
+          // Last-resort selection inside the visible output box
+          outputEl.focus();
+          outputEl.select();
+          showToast('අකුරු Select වුණා — Copy ඔබන්න', true);
+        }
+      }
+
+      btnCopy.addEventListener('click', copySinhalaText);
+
+      // ---------- Clear Button ----------
+      btnClear.addEventListener('click', () => {
+        if (!inputEl.value && !outputEl.value) return;
+        inputEl.value = '';
+        syncText();
+        inputEl.focus();
+        showToast('මකා දමන ලදී', true);
+      });
+
+      // ---------- Share to WhatsApp ----------
+      btnWhatsapp.addEventListener('click', () => {
+        const text = outputEl.value.trim();
+        if (!text) {
+          showToast('WhatsApp වෙත යැවීමට පළමුව යමක් Type කරන්න!', true);
+          inputEl.focus();
+          return;
+        }
+        const waUrl = 'https://wa.me/?text=' + encodeURIComponent(text);
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+      });
+
+      // ---------- Share this App on Facebook ----------
+      btnFbShare.addEventListener('click', () => {
+        const pageUrl = window.location.href;
+        const fbUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl);
+        window.open(fbUrl, '_blank', 'noopener,noreferrer');
+      });
+
+      // ---------- Quick Sample Pills ----------
+      samplePills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          inputEl.value = pill.getAttribute('data-sample') || '';
+          syncText();
+          inputEl.focus();
+        });
+      });
+
+      // ---------- Font Size Switcher ----------
+      function applyFontSize(cls) {
+        outputEl.classList.remove('font-sm', 'font-md', 'font-lg');
+        outputEl.classList.add(cls);
+        sizeBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-size') === cls));
+        safeSet(KEY_SIZE, cls);
+      }
+
+      sizeBtns.forEach((btn) => {
+        btn.addEventListener('click', () => applyFontSize(btn.getAttribute('data-size')));
+      });
+
+      // ---------- Dark / Light Mode ----------
+      function applyTheme(isDark) {
+        document.documentElement.classList.toggle('dark', isDark);
+        iconSun.style.display = isDark ? 'block' : 'none';
+        iconMoon.style.display = isDark ? 'none' : 'block';
+        safeSet(KEY_THEME, isDark ? 'dark' : 'light');
+      }
+
+      btnTheme.addEventListener('click', () => {
+        applyTheme(!document.documentElement.classList.contains('dark'));
+      });
+
+      // ---------- Typing Guide Modal & Chip Insertion ----------
+      function insertAtCursor(str) {
+        const start = inputEl.selectionStart ?? inputEl.value.length;
+        const end = inputEl.selectionEnd ?? inputEl.value.length;
+        inputEl.value = inputEl.value.slice(0, start) + str + inputEl.value.slice(end);
+        const pos = start + str.length;
+        syncText();
+        guideModal.classList.remove('open');
+        inputEl.focus();
+        try { inputEl.setSelectionRange(pos, pos); } catch (_) {}
+      }
+
+      function renderGuideTab(key) {
+        const items = GUIDE_TABS[key] || [];
+        guideGrid.innerHTML = '';
+        items.forEach((item) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'char-chip';
+          btn.innerHTML = `
+            <span class="char-si">${item.si}</span>
+            <span class="char-en">${item.code}</span>
+            ${item.alt ? `<span class="char-alt">${item.alt}</span>` : ''}
+          `;
+          btn.addEventListener('click', () => insertAtCursor(item.code));
+          guideGrid.appendChild(btn);
+        });
+      }
+
+      btnOpenGuide.addEventListener('click', () => guideModal.classList.add('open'));
+      btnCloseGuide.addEventListener('click', () => guideModal.classList.remove('open'));
+      guideModal.addEventListener('click', (e) => {
+        if (e.target === guideModal) guideModal.classList.remove('open');
+      });
+
+      guideTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          guideTabs.forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+          renderGuideTab(tab.getAttribute('data-tab'));
+        });
+      });
+
+      exampleChips.forEach((chip) => {
+        chip.addEventListener('click', () => insertAtCursor(chip.getAttribute('data-insert') || ''));
+      });
+
+      // ---------- Initial Restore ----------
+      const savedTheme = safeGet(KEY_THEME);
+      if (savedTheme === 'dark') {
+        applyTheme(true);
+      } else if (savedTheme === 'light') {
+        applyTheme(false);
+      } else {
+        applyTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      }
+
+      const savedSize = safeGet(KEY_SIZE);
+      applyFontSize(savedSize || 'font-md');
+
+      const savedText = safeGet(KEY_TEXT);
+      if (savedText) inputEl.value = savedText;
+
+      renderGuideTab('vowels');
+      syncText();
+    })();
+  </script>
+</body>
+</html>
